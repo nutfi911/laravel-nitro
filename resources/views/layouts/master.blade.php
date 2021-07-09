@@ -34,18 +34,18 @@
                         <a class="nav-link" href="#">Hakkımızda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Araçlar</a>
+                        <a class="nav-link" href="{{route('listAll')}}">Araçlar</a>
                     </li>
                     @guest
                     <li class="nav-item">
-                        <a class="nav-link" href="">Giriş Yap</a>
+                        <a class="nav-link" href="{{route('login')}}">Giriş Yap</a>
                     </li>
                     @else
                     <li class="nav-item">
-                        <a class="nav-link" href="">Müşteri Paneli</a>
+                        <a class="nav-link" href="{{route('memberSettings')}}">Müşteri Paneli</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Çıkış Yap</a>
+                        <a class="nav-link" href="{{route('logout')}}">Çıkış Yap</a>
                     </li>
                     @endauth
                 </ul>
