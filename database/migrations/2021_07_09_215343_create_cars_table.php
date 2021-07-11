@@ -22,7 +22,7 @@ class CreateCarsTable extends Migration
             $table->string('image');
             $table->integer('seats');
             $table->boolean('isAutomatic');
-            $table->boolean('isDiesel');
+            $table->boolean('isElectric');
             $table->integer('dailyPrice');
             $table->boolean('isActive')->default('1');
         });

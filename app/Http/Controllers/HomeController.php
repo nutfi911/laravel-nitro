@@ -16,8 +16,10 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $cars = Car::all()->where('isHighligted', 1);
-        return view('index')->with('cars', $cars);
+        // $cars = Car::all()->where('isHighligted', 1);
+        // return view('index')->with('cars', $cars);
+
+        return view('guest.welcome');
     }
 
     public function listAll()
@@ -56,17 +58,25 @@ class HomeController extends Controller
 
     public function login()
     {
-        return view('login');
+        return view('guest.login');
     }
 
     public function loginAttempt(Request $request)
     {
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->rememberme)) {
             alert()->success('Logged In', 'Welcome');
-        }
+            return redirect()->intended(route('loggedIn'));
+        } else {
 
-        alert()->error('Error Loggin In', 'Check your Credentials');
-        return redirect()->route('login');
+            alert()->error('Error Loggin In', 'Check your Credentials');
+            return redirect()->route('login');
+        }
+    }
+
+    public function loggedIn()
+    {
+        $cars = Car::all()->where('isHighligted', 1);
+        return view('index')->with('cars', $cars);
     }
 
     public function logout()
@@ -78,13 +88,13 @@ class HomeController extends Controller
 
     public function register()
     {
-        return view('register');
+        return view('guest.register');
     }
 
     public function registerStore(Request $request)
     {
         $request->validate([
-            'email' => 'required|email',
+            'email' => 'required|unique:users,email|email',
             'password' => 'required|min:6',
             'name' => 'required',
             'phone' => 'required',
@@ -146,9 +156,10 @@ class HomeController extends Controller
         if ($user->save()) {
             alert()->success('Edit Success', 'Edited successfully');
             return back();
-        }
+        } else {
 
-        alert()->error('Error Editing', 'Could not edit');
-        return back();
+            alert()->error('Error Editing', 'Could not edit');
+            return back();
+        }
     }
 }
