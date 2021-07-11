@@ -1,34 +1,34 @@
 @extends('admin.layouts.master')
-@section('title','Rezervasyonlar')
+@section('title','Резервации')
 @section('content')
 <div class="container-fluid">
-    <h1 class="mt-4">Rezervasyonlar</h1>
+    <h1 class="mt-4">Резеравции</h1>
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table mr-1"></i>
-            Tüm Rezervasyonlar
+            Всички резеравции
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="table_1" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Rezarvasyon Başlangıç</th>
-                            <th>Rezarvasyon Bitiş</th>
+                            <th>Начална дата</th>
+                            <th>Крайна дата</th>
                             <th>Кола</th>
-                            <th>Müşteri</th>
+                            <th>Клиент</th>
                             <th>Сума</th>
-                            <th>İşlem</th>
+                            <th>Обработка</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>Rezarvasyon Başlangıç</th>
-                            <th>Rezarvasyon Bitiş</th>
+                            <th>Начална дата</th>
+                            <th>Крайна дата</th>
                             <th>Кола</th>
-                            <th>Müşteri</th>
+                            <th>Клиент</th>
                             <th>Сума</th>
-                            <th>İşlem</th>
+                            <th>Обработка</th>
                         </tr>
                     </tfoot>
                     <tbody>
@@ -40,9 +40,9 @@
                             <td>{{$item->name}}</td>
                             <td>{{$item->price}}</td>
                             @if(!$item->isConfirmed)
-                            <td><a href="{{route('backend.reservation',['id'=> $item->resid])}}">Onayla</a></td>
+                            <td><a class="btn btn-outline-success" href="{{route('backend.reservation',['id'=> $item->resid])}}">Одобри</a></td>
                             @else
-                            <td><img src="/verified.png"> Onaylı </td>
+                            <td><img src="/verified.png"> Одобрена </td>
                             @endif
                         </tr>
                         @endforeach
@@ -62,32 +62,32 @@
         "responsive": true,
         "dom": '<"html5buttons"B>lTfgitp',
         "language": {
-            "emptyTable": "Gösterilecek ver yok.",
-            "processing": "Veriler yükleniyor",
+            "emptyTable": "Няма данни за показване.",
+            "processing": "Данните се зареждат",
             "sDecimal": ".",
-            "sInfo": "_TOTAL_ kayıttan _START_ - _END_ arasındaki kayıtlar gösteriliyor",
-            "sInfoFiltered": "(_MAX_ kayıt içerisinden bulunan)",
+            "sInfo": "От общо _TOTAL_ се показват _START_ - _END_",
+            "sInfoFiltered": "( От общо _MAX_ са намерени:)",
             "sInfoPostFix": "",
             "sInfoThousands": ".",
-            "sLengthMenu": "Sayfada _MENU_ kayıt göster",
-            "sLoadingRecords": "Yükleniyor...",
-            "sSearch": "Ara:",
-            "sZeroRecords": "Eşleşen kayıt bulunamadı",
+            "sLengthMenu": "Покажи _MENU_ на страница",
+            "sLoadingRecords": "Зарежда се...",
+            "sSearch": "Търси:",
+            "sZeroRecords": "Няма резултат",
             "oPaginate": {
-                "sFirst": "İlk",
-                "sLast": "Son",
-                "sNext": "Sonraki",
-                "sPrevious": "Önceki"
+                "sFirst": "Първи",
+                "sLast": "Последен",
+                "sNext": "Следващ",
+                "sPrevious": "Предишен"
             },
             "oAria": {
-                "sSortAscending": ": artan sütun sıralamasını aktifleştir",
-                "sSortDescending": ": azalan sütun sıralamasını aktifleştir"
+                "sSortAscending": ": Входящо соритране",
+                "sSortDescending": ": Низходящо сортиране"
             },
             "select": {
                 "rows": {
-                    "_": "%d kayıt seçildi",
+                    "_": "%d избрани",
                     "0": "",
-                    "1": "1 kayıt seçildi"
+                    "1": "1 избран"
                 }
             }
         }

@@ -1,9 +1,9 @@
 @extends('admin.layouts.master')
-@section('title','Üye Редактирай')
+@section('title','Редактирай клиент')
 @section('content')
 @php
 if($errors->any()){
-alert()->error('Hata','Hata oluştu');
+alert()->error('Грешка','Грешка');
 }
 
 @endphp
@@ -18,43 +18,30 @@ alert()->error('Hata','Hata oluştu');
 @endif
 
 <div class="container-fluid">
-    <h1 class="mt-4">Üye Редактирай</h1>
+    <h1 class="mt-4">Редактирай клиент</h1>
 
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-user-cog"></i>
-            Üye Редактирай
+            Редактирай клиент
         </div>
         <div class="card-body">
             <form action="{{route('backend.userupdate',['id' => $user->id])}}" method="POST">
                 @csrf
                 <div class="form-group">
-                    <label>Adı</label>
+                    <label>Име</label>
                     <input type="text" name="name" class="form-control" value="{{$user->name}}">
                 </div>
                 <div class="form-group">
-                    <label>Email</label>
+                    <label>E-mail</label>
                     <input type="text" name="email" class="form-control" value="{{$user->email}}">
                 </div>
                 <div class="form-group">
-                    <label>TC No</label>
-                    <input type="text" name="user_tc" class="form-control" value="{{$user->user_tc}}">
-                </div>
-                <div class="form-group">
-                    <label>Telefon</label>
+                    <label>Телефон</label>
                     <input type="text" name="user_phone" class="form-control" value="{{$user->user_phone}}">
                 </div>
-                <div class="form-group">
-                    <label>Şehir</label>
-                    <input type="text" name="user_city" class="form-control" value="{{$user->user_city}}">
-                </div>
-                <div class="form-group">
-                    <label>Doğum Yılı</label>
-                    <input type="text" name="user_birthday" class="form-control" value="{{$user->user_birthday}}">
-                </div>
 
-
-                <button type="submit" class="btn btn-success">Редактирай</button>
+                <button type="submit" class="btn btn-outline-success">Редактирай</button>
             </form>
         </div>
     </div>

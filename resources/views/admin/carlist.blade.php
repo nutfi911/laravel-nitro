@@ -8,35 +8,35 @@
         <div class="card-header">
             <i class="fas fa-table mr-1"></i>
             Коли
-            <a href="{{route('backend.deletedCarList')}}" class="btn btn-danger float-lg-right">Премахнати коли</a>
+            <a href="{{route('backend.deletedCarList')}}" class="btn btn-warning float-lg-right">Деактивирани коли</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="table_1" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Görsel</th>
-                            <th width="100">Marka</th>
-                            <th width="100">Model</th>
-                            <th width="300">Detay</th>
+                            <th>Снимка</th>
+                            <th width="100">Марка</th>
+                            <th width="100">Модел</th>
+                            <th width="300">Детайли</th>
                             <th width="30">Места</th>
-                            <th>скоростна кутия</th>
-                            <th width="100">Yakıt Tipi</th>
-                            <th width="100">Günlük Fiyat</th>
-                            <th>İşlem</th>
+                            <th>Скоростна кутия</th>
+                            <th width="100">Гориво</th>
+                            <th width="100">Цена/Ден</th>
+                            <th>Действие</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>Görsel</th>
-                            <th width="100">Marka</th>
-                            <th width="100">Model</th>
-                            <th width="300">Detay</th>
+                            <th>Снимка</th>
+                            <th width="100">Марка</th>
+                            <th width="100">Модел</th>
+                            <th width="300">Детайли</th>
                             <th width="30">Места</th>
-                            <th>скоростна кутия</th>
-                            <th width="100">Yakıt Tipi</th>
-                            <th width="100">Günlük Fiyat</th>
-                            <th>İşlem</th>
+                            <th>Скоростна кутия</th>
+                            <th width="100">Гориво</th>
+                            <th width="100">Цена/Ден</th>
+                            <th>Действие</th>
                         </tr>
                     </tfoot>
                     <tbody>
@@ -48,9 +48,9 @@
                             <td>{{$item->details}}</td>
                             <td>{{$item->seats}}</td>
                             <td>{{$item->isAutomatic==1 ? "Автоматична" : "Ръчна"}}</td>
-                            <td>{{$item->isElectric==1 ? "Електрическа" : "Бензинli"}}</td>
+                            <td>{{$item->isElectric==1 ? "Електрическа" : "Бензин"}}</td>
                             <td>{{$item->dailyPrice}}</td>
-                            <td><a href="{{route('backend.carEdit',['id' => $item->id])}}" class="btn btn-success"> Редактирай</a> <a href="{{route('backend.carPassive',['id' => $item->id])}}" class="btn btn-danger">Sil</a></td>
+                            <td><a href="{{route('backend.carEdit',['id' => $item->id])}}" class="btn btn-outline-success"> Редактирай</a> <a href="{{route('backend.carPassive',['id' => $item->id])}}" class="btn btn-outline-warning">Деактивирай</a></td>
                         </tr>
                         @endforeach
 
@@ -68,32 +68,32 @@
         "responsive": true,
         "dom": '<"html5buttons"B>lTfgitp',
         "language": {
-            "emptyTable": "Gösterilecek ver yok.",
-            "processing": "Veriler yükleniyor",
+            "emptyTable": "Няма данни за показване.",
+            "processing": "Данните се зареждат",
             "sDecimal": ".",
-            "sInfo": "_TOTAL_ kayıttan _START_ - _END_ arasındaki kayıtlar gösteriliyor",
-            "sInfoFiltered": "(_MAX_ kayıt içerisinden bulunan)",
+            "sInfo": "От общо _TOTAL_ се показват _START_ - _END_",
+            "sInfoFiltered": "( От общо _MAX_ са намерени:)",
             "sInfoPostFix": "",
             "sInfoThousands": ".",
-            "sLengthMenu": "Sayfada _MENU_ kayıt göster",
-            "sLoadingRecords": "Yükleniyor...",
-            "sSearch": "Ara:",
-            "sZeroRecords": "Eşleşen kayıt bulunamadı",
+            "sLengthMenu": "Покажи _MENU_ на страница",
+            "sLoadingRecords": "Зарежда се...",
+            "sSearch": "Търси:",
+            "sZeroRecords": "Няма резултат",
             "oPaginate": {
-                "sFirst": "İlk",
-                "sLast": "Son",
-                "sNext": "Sonraki",
-                "sPrevious": "Önceki"
+                "sFirst": "Първи",
+                "sLast": "Последен",
+                "sNext": "Следващ",
+                "sPrevious": "Предишен"
             },
             "oAria": {
-                "sSortAscending": ": artan sütun sıralamasını aktifleştir",
-                "sSortDescending": ": azalan sütun sıralamasını aktifleştir"
+                "sSortAscending": ": Входящо соритране",
+                "sSortDescending": ": Низходящо сортиране"
             },
             "select": {
                 "rows": {
-                    "_": "%d kayıt seçildi",
+                    "_": "%d избрани",
                     "0": "",
-                    "1": "1 kayıt seçildi"
+                    "1": "1 избран"
                 }
             }
         }

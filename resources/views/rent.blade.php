@@ -35,23 +35,19 @@
                 <form action="{{route('rent.request',['id' => $car['id']])}}" method="post">
                     @csrf
                     <div class="form-group">
-                        <label>Adınız</label>
+                        <label>Потребител</label>
                         <input type="text" class="form-control" value="{{Auth::user()->name}}" disabled>
-                    </div>
-                    <div class="form-group">
-                        <label>TC Kimlik Numaranız</label>
-                        <input type="text" class="form-control" value="{{Auth::user()->user_tc}}" disabled>
                     </div>
                     <div class="form-group">
                         <label>Телефонен номер</label>
                         <input type="text" class="form-control" value="{{Auth::user()->user_phone}}" disabled>
                     </div>
                     <div class="form-group">
-                        <label>Kaç Gün Kiralama Yapacaksınız?</label>
-                        <input type="text" class="form-control" name="day">
+                        <label>Брой дни (-40% при 30 дни)</label>
+                        <input type="number" min="1" max="30" class="form-control" name="day">
                     </div>
 
-                    <button type="submit" class="btn btn-success">İstek Oluştur</button>
+                    <button type="submit" class="btn btn-outline-success">Заяви наем</button>
                 </form>
             </div>
 

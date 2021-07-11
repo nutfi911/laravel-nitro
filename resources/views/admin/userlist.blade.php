@@ -1,45 +1,39 @@
 @extends('admin.layouts.master')
-@section('title','Rezervasyonlar')
+@section('title','Клиенти')
 @section('content')
 <div class="container-fluid">
-    <h1 class="mt-4">Rezervasyonlar</h1>
+    <h1 class="mt-4">Всички клиенти</h1>
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table mr-1"></i>
-            Tüm Rezervasyonlar
+            Списък с клиенти
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="table_1" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Adı</th>
-                            <th>TC</th>
-                            <th>Email</th>
-                            <th>Telefon</th>
-                            <th>Şehir</th>
-                            <th>İşlem</th>
+                            <th>Име</th>
+                            <th>E-mail</th>
+                            <th>Телефон</th>
+                            <th>Действие</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>Adı</th>
-                            <th>TC</th>
-                            <th>Email</th>
-                            <th>Telefon</th>
-                            <th>Şehir</th>
-                            <th>İşlem</th>
+                            <th>Име</th>
+                            <th>E-mail</th>
+                            <th>Телефон</th>
+                            <th>Действие</th>
                         </tr>
                     </tfoot>
                     <tbody>
                         @foreach($users as $item)
                         <tr>
                             <td>{{$item->name}}</td>
-                            <td>{{$item->user_tc}}</td>
                             <td>{{$item->email}}</td>
                             <td>{{$item->user_phone}}</td>
-                            <td>{{$item->user_city}}</td>
-                            <td><a href="{{route('backend.useredit.page',['id' => $item->id])}}">Редактирай</a></td>
+                            <td><a class="btn btn-outline-warning" href="{{route('backend.useredit.page',['id' => $item->id])}}">Редактирай</a></td>
 
                         </tr>
                         @endforeach
@@ -59,32 +53,32 @@
         "responsive": true,
         "dom": '<"html5buttons"B>lTfgitp',
         "language": {
-            "emptyTable": "Gösterilecek ver yok.",
-            "processing": "Veriler yükleniyor",
+            "emptyTable": "Няма данни за показване.",
+            "processing": "Данните се зареждат",
             "sDecimal": ".",
-            "sInfo": "_TOTAL_ kayıttan _START_ - _END_ arasındaki kayıtlar gösteriliyor",
-            "sInfoFiltered": "(_MAX_ kayıt içerisinden bulunan)",
+            "sInfo": "От общо _TOTAL_ се показват _START_ - _END_",
+            "sInfoFiltered": "( От общо _MAX_ са намерени:)",
             "sInfoPostFix": "",
             "sInfoThousands": ".",
-            "sLengthMenu": "Sayfada _MENU_ kayıt göster",
-            "sLoadingRecords": "Yükleniyor...",
-            "sSearch": "Ara:",
-            "sZeroRecords": "Eşleşen kayıt bulunamadı",
+            "sLengthMenu": "Покажи _MENU_ на страница",
+            "sLoadingRecords": "Зарежда се...",
+            "sSearch": "Търси:",
+            "sZeroRecords": "Няма резултат",
             "oPaginate": {
-                "sFirst": "İlk",
-                "sLast": "Son",
-                "sNext": "Sonraki",
-                "sPrevious": "Önceki"
+                "sFirst": "Първи",
+                "sLast": "Последен",
+                "sNext": "Следващ",
+                "sPrevious": "Предишен"
             },
             "oAria": {
-                "sSortAscending": ": artan sütun sıralamasını aktifleştir",
-                "sSortDescending": ": azalan sütun sıralamasını aktifleştir"
+                "sSortAscending": ": Входящо соритране",
+                "sSortDescending": ": Низходящо сортиране"
             },
             "select": {
                 "rows": {
-                    "_": "%d kayıt seçildi",
+                    "_": "%d избрани",
                     "0": "",
-                    "1": "1 kayıt seçildi"
+                    "1": "1 избран"
                 }
             }
         }

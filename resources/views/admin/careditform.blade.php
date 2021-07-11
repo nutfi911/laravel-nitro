@@ -12,25 +12,25 @@
         <div class="card-body">
             <form action="{{route('backend.carUpdate')}}" method="POST" enctype="multipart/form-data">
                 @csrf
-                <label>Yüklü Görsel</label>
+                <label>Снимка</label>
                 <div class="form-group">
 
                     <img src="/images/{{$car->image}}" width="150">
                 </div>
                 <div class="form-group">
-                    <label>Marka</label>
+                    <label>Марка</label>
                     <input type="text" name="brand" class="form-control" value="{{$car->brand}}" placeholder="Aracın Markasını Giriniz">
                 </div>
                 <div class="form-group">
-                    <label>Model</label>
+                    <label>Модел</label>
                     <input type="text" name="model" class="form-control" value="{{$car->model}}" placeholder="Aracın Modelini Giriniz">
                 </div>
                 <div class="form-group">
-                    <label>Detay</label>
+                    <label>Детайли</label>
                     <textarea name="detail" class="form-control" placeholder="Aracın Açıklamasını Giriniz">{{$car->details}}</textarea>
                 </div>
                 <div class="form-group">
-                    <label>Места Sayısı Giriniz</label>
+                    <label>Брой места</label>
                     <input type="number" name="seats" class="form-control" value="{{$car->seats}}">
                 </div>
                 <div class="form-group form-check">
@@ -42,11 +42,11 @@
                     <label class="form-check-label">Електрическа</label>
                 </div>
                 <div class="form-group">
-                    <label>Günlük Fiyat</label>
+                    <label>Цена/Ден</label>
                     <input type="number" name="dailyprice" class="form-control" value="{{$car->dailyPrice}}">
                 </div>
                 <div class="form-group">
-                    <label>Görsel yükleyiniz</label>
+                    <label>Качете снимка</label>
                     <input type="file" class="form-control-file" name="image">
                 </div>
                 <input name="carid" type="hidden" value="{{$car->id}}">

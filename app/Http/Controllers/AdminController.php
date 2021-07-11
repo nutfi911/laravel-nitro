@@ -87,7 +87,7 @@ class AdminController extends Controller
         $car->seats = $request->seats;
         $car->image = $imageName;
         $car->isAutomatic = $request->automatic == 'on' ? 1 : 0;
-        $car->isElectric = $request->diesel == 'on' ? 1 : 0;
+        $car->isElectric = $request->electric == 'on' ? 1 : 0;
         $car->dailyPrice = $request->dailyprice;
 
         if ($car->save()) {
@@ -174,7 +174,7 @@ class AdminController extends Controller
             $car->image = $imageName;
         }
         $car->isAutomatic = $request->automatic == 'on' ? 1 : 0;
-        $car->isElectric = $request->diesel == 'on' ? 1 : 0;
+        $car->isElectric = $request->electric == 'on' ? 1 : 0;
         $car->dailyPrice = $request->dailyprice;
 
 
@@ -263,12 +263,7 @@ class AdminController extends Controller
                 ['isConfirmed' => 1]
             );
 
-        $car = DB::table('cars')
-            ->where('id', DB::table('reservations')
-                ->where('resid', $id))
-            ->update(['isActive' => 0]);
-
-        if ($car && $reservation) {
+        if ($reservation) {
             Alert::alert('Success', 'Reservation is active', 'success');
             return back();
         } else {

@@ -13,38 +13,38 @@
             <form action="{{route('backend.carStore')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Marka</label>
-                    <input type="text" name="brand" class="form-control" placeholder="Aracın Markasını Giriniz">
+                    <label for="exampleInputEmail1">Марка</label>
+                    <input type="text" name="brand" class="form-control" placeholder="">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Model</label>
-                    <input type="text" name="model" class="form-control" placeholder="Aracın Modelini Giriniz">
+                    <label for="exampleInputEmail1">Модел</label>
+                    <input type="text" name="model" class="form-control" placeholder="">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Detay</label>
-                    <textarea name="detail" class="form-control" placeholder="Aracın Açıklamasını Giriniz"></textarea>
+                    <label for="exampleInputEmail1">Детайли</label>
+                    <textarea name="detail" class="form-control" placeholder=""></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Места Sayısı Giriniz</label>
-                    <input type="number" name="seats" class="form-control">
+                    <label for="exampleInputEmail1">Брой места</label>
+                    <input type="number" min="1" max="12" step="1" name="seats" class="form-control">
                 </div>
                 <div class="form-group form-check">
                     <input type="checkbox" class="form-check-input" name="automatic">
                     <label class="form-check-label">Автоматична</label>
                 </div>
                 <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" name="diesel">
+                    <input type="checkbox" class="form-check-input" name="electric">
                     <label class="form-check-label">Електрическа</label>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Günlük Fiyat</label>
+                    <label for="exampleInputEmail1">Günlük</label>
                     <input type="number" name="dailyprice" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlFile1">Görsel yükleyiniz</label>
+                    <label for="exampleFormControlFile1">Качете изображение</label>
                     <input type="file" class="form-control-file" name="image">
                 </div>
-                <button type="submit" class="btn btn-success">Oluştur</button>
+                <button type="submit" class="btn btn-outline-success">Създай нов автомобил</button>
             </form>
         </div>
     </div>

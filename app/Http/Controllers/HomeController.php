@@ -39,15 +39,28 @@ class HomeController extends Controller
         $request->validate([
             'day' => 'required'
         ]);
+
+        $days = $request->day;
+
         $car = Car::find($id);
+
         $price = $car['dailyPrice'];
+
+        $totalAmount = 0;
+
+        if ($days == 30) {
+            $totalAmount = $price * $days - ($price * $days * 0.4);
+        } else {
+            $totalAmount = $price * $days;
+        }
+
 
         $reservation = new Reservation();
         $reservation->user_id = Auth::user()->id;
         $reservation->car_id = $id;
         $reservation->reservationStartDate = Carbon::now();
         $reservation->reservationEndDate = Carbon::now()->addDays($request->day);
-        $reservation->price = $price * $request->day;
+        $reservation->price = $totalAmount;
         $reservation->isConfirmed = 0;
         if ($reservation->save()) {
             Alert::alert('Success!', 'New reservation created successfully!', 'success');
