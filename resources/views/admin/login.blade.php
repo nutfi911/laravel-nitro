@@ -12,7 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="bg-primary">
+<body class="bg-secondary">
     <div id="layoutAuthentication">
         <div id="layoutAuthentication_content">
             <main>
@@ -21,27 +21,27 @@
                         <div class="col-lg-5">
                             <div class="card shadow-lg border-0 rounded-lg mt-5">
                                 <div class="card-header">
-                                    <h3 class="text-center font-weight-light my-4">Giriş</h3>
+                                    <h3 class="text-center font-weight-light my-4">Вход като администратор</h3>
                                 </div>
                                 <div class="card-body">
                                     <form action="{{route('backend.loginAttempt')}}" method="post">
                                         @csrf
                                         <div class="form-group">
                                             <label class="small mb-1">Email</label>
-                                            <input class="form-control py-4" name="email" type="email" placeholder="Email giriniz" />
+                                            <input class="form-control py-4" name="email" type="email" placeholder="" />
                                         </div>
                                         <div class="form-group">
                                             <label class="small mb-1">Парола</label>
-                                            <input class="form-control py-4" name="password" type="password" placeholder="Парола giriniz" />
+                                            <input class="form-control py-4" name="password" type="password" placeholder="" />
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox">
                                                 <input name="rememberme" class="custom-control-input" id="rememberPasswordCheck" type="checkbox" />
-                                                <label class="custom-control-label" for="rememberPasswordCheck">Beni hatırla</label>
+                                                <label class="custom-control-label" for="rememberPasswordCheck">Запомни ме</label>
                                             </div>
                                         </div>
                                         <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0  float-lg-right">
-                                            <button class="btn btn-info" type="submit">Giriş yap</button>
+                                            <button class="btn btn-outline-dark" type="submit">Вход</button>
                                         </div>
                                     </form>
                                 </div>
@@ -55,7 +55,7 @@
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid">
                     <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Cimen 2021</div>
+                        <div class="text-muted">Nitro &copy; 2021</div>
 
                     </div>
                 </div>

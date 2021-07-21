@@ -22,12 +22,12 @@ Route::get('/welcome', [HomeController::class, 'loggedIn'])->name('loggedIn');
 Route::get('/logout', [HomeController::class, 'logout'])->name('logout');
 Route::get('/register', [HomeController::class, 'register'])->name('register');
 Route::post('/register', [HomeController::class, 'registerStore'])->name('registerStore');
-Route::get('/tum-araclar', [HomeController::class, 'listAll'])->name('listAll');
-Route::get('/kirala/{id}', [HomeController::class, 'rent'])->name('rent')->middleware('isuser');
-Route::post('/kirala/{id}', [HomeController::class, 'rentRequest'])->name('rent.request')->middleware('isuser');
-Route::get('/musteri-paneli', [HomeController::class, 'memberSettings'])->name('memberSettings')->middleware('isuser');
-Route::get('/musteri-paneli/duzenle', [HomeController::class, 'memberEdit'])->name('memberEdit')->middleware('isuser');
-Route::post('/musteri-paneli/duzenle', [HomeController::class, 'memberStore'])->name('memberStore')->middleware('isuser');
+Route::get('/list-all', [HomeController::class, 'listAll'])->name('listAll');
+Route::get('/rent/{id}', [HomeController::class, 'rent'])->name('rent')->middleware('isuser');
+Route::post('/rent/{id}', [HomeController::class, 'rentRequest'])->name('rent.request')->middleware('isuser');
+Route::get('/customer', [HomeController::class, 'memberSettings'])->name('memberSettings')->middleware('isuser');
+Route::get('/customer/edit', [HomeController::class, 'memberEdit'])->name('memberEdit')->middleware('isuser');
+Route::post('/customer/edit', [HomeController::class, 'memberStore'])->name('memberStore')->middleware('isuser');
 Route::get('/admin/login', [AdminController::class, 'login'])->name('backend.login');
 Route::post('/admin/login', [AdminController::class, 'loginAttempt'])->name('backend.loginAttempt');
 

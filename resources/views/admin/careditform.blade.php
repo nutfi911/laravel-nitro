@@ -1,13 +1,13 @@
 @extends('admin.layouts.master')
-@section('title','Редактирай колата')
+@section('title','Редакция на автомобил')
 @section('content')
 <div class="container-fluid">
-    <h1 class="mt-4">Редактирай колата</h1>
+    <h1 class="mt-4">Редакция на автомобил</h1>
 
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-car mr-1"></i>
-            Редактирай колата
+            Редакция на автомобил
         </div>
         <div class="card-body">
             <form action="{{route('backend.carUpdate')}}" method="POST" enctype="multipart/form-data">

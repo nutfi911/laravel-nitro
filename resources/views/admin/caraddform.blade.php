@@ -37,7 +37,7 @@
                     <label class="form-check-label">Електрическа</label>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Günlük</label>
+                    <label for="exampleInputEmail1">Цена за ден</label>
                     <input type="number" name="dailyprice" class="form-control">
                 </div>
                 <div class="form-group">

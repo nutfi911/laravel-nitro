@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title','Kirala')
+@section('title','Наем')
 @section('content')
 
 <!-- Jumbotron Header -->
