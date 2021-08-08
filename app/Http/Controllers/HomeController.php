@@ -88,14 +88,18 @@ class HomeController extends Controller
 
     public function loggedIn()
     {
-        $cars = Car::all()->where('isHighligted', 1);
-        return view('index')->with('cars', $cars);
+        // $cars = Car::all()->where('isHighligted', 1);
+        // return view('index')->with('cars', $cars);
+        return view('index');
     }
 
-    public function logout()
+    public function logout(Request $request)
     {
         Auth::logout();
-        alert()->success('Loggged out', 'Logged out successfully');
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
         return redirect()->intended(route('index'));
     }
 

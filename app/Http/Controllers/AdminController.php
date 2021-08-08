@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Approved;
 use App\Models\Car;
 use App\Models\Reservation;
 use App\Models\User;
@@ -9,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class AdminController extends Controller
@@ -29,10 +31,13 @@ class AdminController extends Controller
         return redirect()->route('backend.login');
     }
 
-    public function logout()
+    public function logout(Request $request)
     {
         Auth::logout();
-        alert()->success('Logged out', 'You are logged out');
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
         return redirect(route('backend.login'));
     }
 
@@ -256,12 +261,25 @@ class AdminController extends Controller
 
     public function reservationOperation($id)
     {
+        $reservationDetails = DB::table('reservations')->where('resid', $id)->get();
+        $selectedCar = DB::table('cars')->where('id', $reservationDetails[0]->car_id)->get();
+        $details = [
+            'title' => 'Одобрена резервация',
+            'carBrand' => $selectedCar[0]->brand,
+            'carModel' => $selectedCar[0]->model,
+            'price' => $reservationDetails[0]->price,
+            'carImg' => $selectedCar[0]->image,
+            'startDate' => $reservationDetails[0]->reservationStartDate,
+            'endDate' => $reservationDetails[0]->reservationEndDate,
 
+        ];;
+        Mail::to(User::find($reservationDetails[0]->user_id)->email)->send(new Approved($details));
         $reservation = DB::table('reservations')
             ->where('resid', $id)
             ->update(
                 ['isConfirmed' => 1]
             );
+
 
         if ($reservation) {
             Alert::alert('Success', 'Reservation is active', 'success');

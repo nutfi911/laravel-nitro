@@ -114,19 +114,14 @@
         <div class="slider">
             <div class="slide slide--1">
                 <div class="testimonial">
-                    <h5 class="testimonial__header">Best financial decision ever!</h5>
+                    <h5 class="testimonial__header">★★★★★</h5>
                     <blockquote class="testimonial__text">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        Accusantium quas quisquam non? Quas voluptate nulla minima
-                        deleniti optio ullam nesciunt, numquam corporis et asperiores
-                        laboriosam sunt, praesentium suscipit blanditiis. Necessitatibus
-                        id alias reiciendis, perferendis facere pariatur dolore veniam
-                        autem esse non voluptatem saepe provident nihil molestiae.
+                        Взех кола на летището във Варна и потеглихме много доволни клиенти! Колата беше страхотна и страхотна работа Nitro Препоръчвам я на всички! Доставка точно на летището също няма нужда да шофирате никъде.
                     </blockquote>
                     <address class="testimonial__author">
                         <img src="{{ URL::asset('img/user-1.jpg') }}" alt="" class="testimonial__photo" />
-                        <h6 class="testimonial__name">Aarav Lynn</h6>
-                        <p class="testimonial__location">San Francisco, USA</p>
+                        <h6 class="testimonial__name">Никос Каролос</h6>
+                        <p class="testimonial__location">Полигорис, GR</p>
                     </address>
                 </div>
             </div>
@@ -134,19 +129,15 @@
             <div class="slide slide--2">
                 <div class="testimonial">
                     <h5 class="testimonial__header">
-                        The last step to becoming a complete minimalist
+                        ★★★★☆
                     </h5>
                     <blockquote class="testimonial__text">
-                        Quisquam itaque deserunt ullam, quia ea repellendus provident,
-                        ducimus neque ipsam modi voluptatibus doloremque, corrupti
-                        laborum. Incidunt numquam perferendis veritatis neque repellendus.
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo
-                        deserunt exercitationem deleniti.
+                        Това е третият път, когато наемам кола от Nitro. Първите два пъти бях доста доволна. Миналия път бях резервирала малка кола, но бяха останали само големи коли.
                     </blockquote>
                     <address class="testimonial__author">
                         <img src="{{ URL::asset('img/user-2.jpg') }}" alt="" class="testimonial__photo" />
-                        <h6 class="testimonial__name">Miyah Miles</h6>
-                        <p class="testimonial__location">London, UK</p>
+                        <h6 class="testimonial__name">Виктория Левон</h6>
+                        <p class="testimonial__location">Варна, BG</p>
                     </address>
                 </div>
             </div>
@@ -154,20 +145,15 @@
             <div class="slide slide--3">
                 <div class="testimonial">
                     <h5 class="testimonial__header">
-                        Finally free from old-school banks
+                        ★★★★★
                     </h5>
                     <blockquote class="testimonial__text">
-                        Debitis, nihil sit minus suscipit magni aperiam vel tenetur
-                        incidunt commodi architecto numquam omnis nulla autem,
-                        necessitatibus blanditiis modi similique quidem. Odio aliquam
-                        culpa dicta beatae quod maiores ipsa minus consequatur error sunt,
-                        deleniti saepe aliquid quos inventore sequi. Necessitatibus id
-                        alias reiciendis, perferendis facere.
+                        Наех кола в Бургас за една седмица в края на юли 2021 г. Персоналът беше любезен и много услужлив. Колата беше чиста и нова. Няма проблеми и определено бих наела отново от Nitro.
                     </blockquote>
                     <address class="testimonial__author">
                         <img src="{{ URL::asset('img/user-3.jpg') }}" alt="" class="testimonial__photo" />
-                        <h6 class="testimonial__name">Francisco Gomes</h6>
-                        <p class="testimonial__location">Lisbon, Portugal</p>
+                        <h6 class="testimonial__name">Александра Стоянова</h6>
+                        <p class="testimonial__location">Пловдив, BG</p>
                     </address>
                 </div>
             </div>

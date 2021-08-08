@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title','Pasif Araçlar')
+@section('title','Деактивирани коли')
 @section('content')
 <div class="container-fluid">
     <br>
